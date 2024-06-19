@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ua">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="../../libs/aframe/aframe.min.js"></script>
+    <script src="../../libs/aframe/aframe-ar.js"></script>
+    <style>
+        body { margin: 0; }
+    </style>
+</head>
+<body>
+    <a-scene>
+        <a-camera position="0 0 20" rotation="0 0 0" fov="70"></a-camera>
+        <a-marker id="marker" type="pattern" url="../../assets/markers/hiro/pattern-hiro.patt">
+            <!-- Марс -->
+            <a-sphere id="mars"
+                      position="0 0 0" radius="3.0"
+                      rotation="0 0 0"
+                      geometry="primitive: sphere; radius: 3.1"
+                      material="src: url(../../assets/textures/planets/mars/mars_planet_texture.jpg);">
+                <a-sphere
+                        id="phobos"
+                        animationRadius="6"
+                        animationSpeed="0.9"
+                        position="6 0 0"
+                        rotation="0 0 0"
+                        radius="0.5"
+                        material="src: url(../../assets/textures/planets/mars/phobos_satellite_texture.jpg);">
+                </a-sphere>
+                <a-sphere
+                        id="deimos"
+                        animationRadius="9"
+                        animationSpeed="0.3"
+                        position="9 0 0"
+                        rotation="0 0 0"
+                        radius="1.0"
+                        material="src: url(../../assets/textures/planets/mars/deimos_satellite_texture.jpg);">
+                </a-sphere>
+            </a-sphere>
+            <a-entity main></a-entity>
+<!--        </a-marker>-->
+    </a-scene>
+
+    <script type="module" src="mars_aframe.js"></script>
+</body>
+</html>

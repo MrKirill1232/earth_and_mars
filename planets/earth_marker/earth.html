@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ua">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="../../libs/aframe/aframe.min.js"></script>
+    <script src="../../libs/aframe/aframe-ar.js"></script>
+    <style>
+        body { margin: 0; }
+    </style>
+</head>
+<body>
+    <a-scene>
+        <a-camera position="0 0 20" rotation="0 0 0" fov="70"></a-camera>
+        <a-assets>
+            <a-asset-item id="internation_space_station" src="../../assets/model/international_space_station/ISSComplete1.glb"></a-asset-item>
+        </a-assets>
+        <a-marker id="marker" type="pattern" url="../../assets/markers/hiro/pattern-hiro.patt">
+            <!-- Земля -->
+            <a-sphere id="Earth"
+                      position="0 0 0"
+                      radius="3.0"
+                      rotation="0 0 0"
+                      geometry="primitive: sphere; radius: 3.1"
+                      material="src: url(../../assets/textures/planets/earth/earth_planet_texture.jpg);">
+                <a-sphere
+                        id="moon"
+                        animationRadius="9"
+                        animationSpeed="0.3"
+                        position="9 0 0"
+                        rotation="0 0 0"
+                        radius="1.2"
+                        material="src: url(../../assets/textures/planets/earth/moon_satellite_texture.jpg);">
+                </a-sphere>
+                <a-gltf-model
+                        id="iss"
+                        animationRadius="6"
+                        animationSpeed="0.1"
+                        position="6 0 0"
+                        rotation="0 0 0"
+                        src="#internation_space_station" >
+                </a-gltf-model>
+            </a-sphere>
+            <a-entity main></a-entity>
+        </a-marker>
+    </a-scene>
+
+    <script type="module" src="earth_aframe.js"></script>
+</body>
+</html>
